@@ -6,12 +6,13 @@ pipeline {
         DOCKER_CREDENTIALS = 'dockerhub-credentials'
     }
 
+    stages {  // <-- Added this block
+
         stage('Build & Test') {
             steps {
                 bat 'mvn clean package -DskipTests'
-                }
             }
-
+        }
 
         stage('Build Docker Image') {
             steps {
@@ -36,5 +37,6 @@ pipeline {
                 bat "docker rmi ${DOCKER_IMAGE}"
             }
         }
-    }
-}
+
+    } // end stages
+} // end pipeline
