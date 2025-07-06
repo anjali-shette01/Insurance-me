@@ -7,12 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                 git 'https://github.com/anjali-shette01/Insurance-me.git' // Replace with your repo URL
-            }
-        }
-
         stage('Build & Test') {
             steps {
                 bat 'mvnw.cmd clean test'
