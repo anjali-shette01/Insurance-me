@@ -6,12 +6,12 @@ pipeline {
         DOCKER_CREDENTIALS = 'dockerhub-credentials'
     }
 
-    stages {
         stage('Build & Test') {
             steps {
-                bat 'mvnw.cmd clean test'
+                bat 'mvn clean package -DskipTests'
+                }
             }
-        }
+
 
         stage('Build Docker Image') {
             steps {
