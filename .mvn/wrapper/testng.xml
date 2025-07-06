@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Policy Suite">
-    <test name="Policy Tests">
-        <classes>
-            <class name="com.insuranceme.insurance_me.PolicyControllerTest" />
-        </classes>
-    </test>
-</suite>
